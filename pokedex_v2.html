@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    body {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.pokedex {
+  width: 300px;
+  height: 500px;
+  background-color: #FF0000;
+  border: 5px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.camera {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  border: 5px solid #FFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.lights {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 70px;
+}
+
+.light {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.light.red {
+  background-color: red;
+}
+
+.light.yellow {
+  background-color: yellow;
+}
+
+.light.green {
+  background-color: green;
+}
+
+.screen {
+  background-color: #CCC;
+  border: 5px solid #000;
+  border-radius: 5px;
+  width: 100%;
+  height: 200px;
+  margin-top: 50px;
+  position: relative;
+}
+
+.inner-screen {
+  width: 90%;
+  height: 90%;
+  background-color: #FFF;
+  margin: 5%;
+  border: 2px solid #000;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button {
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
+.button.large {
+  width: 30px;
+  height: 30px;
+}
+
+.button.red {
+  background-color: red;
+}
+
+.button.blue {
+  background-color: blue;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button.small {
+  width: 15px;
+  height: 15px;
+  background-color: #000;
+}
+
+.d-pad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.d-pad-button {
+  width: 10px;
+  height: 20px;
+  background-color: #000;
+}
+
+.d-pad-button.up {
+  border-radius: 5px 5px 0 0;
+}
+
+.d-pad-button.down {
+  border-radius: 0 0 5px 5px;
+}
+
+.d-pad-button.left,
+.d-pad-button.right {
+  width: 20px;
+  height: 10px;
+}
+
+.d-pad-button.left {
+  border-radius: 5px 0 0 5px;
+}
+
+.d-pad-button.right {
+  border-radius: 0 5px 5px 0;
+}    
+    </style> 
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="pokedex">
+    <div class="camera"></div>
+    <div class="lights">
+      <div class="light red"></div>
+      <div class="light yellow"></div>
+      <div class="light green"></div>
+    </div>
+    <div class="screen">
+      <div class="inner-screen">
+        <div class="pokemon-info" id="pokemon-container">
+          <!-- Pokémon details will go here -->
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <div class="button large red"></div>
+      <div class="button large blue"></div>
+    </div>
+    <div class="controls">
+      <div class="button small"></div>
+      <div class="button small"></div>
+      <div class="d-pad">
+        <div class="d-pad-button up"></div>
+        <div class="d-pad-button right"></div>
+        <div class="d-pad-button down"></div>
+        <div class="d-pad-button left"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
