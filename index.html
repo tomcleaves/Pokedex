@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project Rotom-Dex - An interactive Pokédex web application featuring Gen 1 Pokémon with search, filtering, and comparison features.">
+    <meta name="keywords" content="pokemon, pokedex, rotom-dex, pokemon search, pokemon comparison">
+    <meta name="author" content="Rotom-Dex Team">
+    <title>Project Rotom-Dex | Interactive Pokédex</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="pokedex-container">
+        <div class="header">
+            <div class="lens-container">
+                <div class="blue-lens"></div>
+                <div class="indicator-lights">
+                    <div class="indicator red"></div>
+                    <div class="indicator yellow"></div>
+                    <div class="indicator green"></div>
+                </div>
+            </div>
+            <h1 class="title">ROTOM-DEX</h1>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙 Dark Mode</button>
+        </div>
+
+        <div class="search-section">
+            <div class="search-bar">
+                <div class="autocomplete-container">
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        id="searchInput" 
+                        placeholder="Enter Pokémon name or ID..." 
+                        autocomplete="off"
+                        aria-label="Search for Pokémon">
+                    <div class="autocomplete-dropdown" id="autocompleteDropdown" role="listbox"></div>
+                </div>
+                <button class="search-button" id="searchButton" aria-label="Search Pokémon">SCAN</button>
+            </div>
+            <div class="filter-section">
+                <div class="filter-group" id="typeFilters" role="group" aria-label="Filter by type"></div>
+            </div>
+        </div>
+
+        <div class="view-tabs">
+            <button class="tab-button active" data-mode="browse" aria-label="Browse mode">BROWSE</button>
+            <button class="tab-button" data-mode="compare" aria-label="Compare mode">COMPARE MODE</button>
+        </div>
+
+        <div class="main-screen" id="mainScreen">
+            <div class="detail-panel" id="detailPanel">
+                <div id="detailView" class="detail-view">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📱</div>
+                        <h3>No Pokémon Selected</h3>
+                        <p>Click on any Pokémon from the grid to view details</p>
+                    </div>
+                </div>
+                <div id="compareView" class="comparison-view">
+                    <div class="comparison-container">
+                        <div class="comparison-card" id="compareSlot1">
+                            <div class="empty-state">
+                                <div class="empty-state-icon">1️⃣</div>
+                                <p>Select first Pokémon from grid</p>
+                            </div>
+                        </div>
+                        <div class="comparison-card" id="compareSlot2">
+                            <div class="empty-state">
+                                <div class="empty-state-icon">2️⃣</div>
+                                <p>Select second Pokémon from grid</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-panel">
+                <div class="pokemon-grid" id="pokemonGrid" role="grid" aria-label="Pokémon grid"></div>
+            </div>
+        </div>
+
+        <div class="hardware-controls" aria-label="Navigation controls">
+            <div class="d-pad" role="group" aria-label="D-pad navigation">
+                <button class="d-pad-button d-pad-up" data-offset="-10" aria-label="Navigate up 10"></button>
+                <button class="d-pad-button d-pad-left" data-offset="-1" aria-label="Navigate left 1"></button>
+                <div class="d-pad-center"></div>
+                <button class="d-pad-button d-pad-right" data-offset="1" aria-label="Navigate right 1"></button>
+                <button class="d-pad-button d-pad-down" data-offset="10" aria-label="Navigate down 10"></button>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button a-button" id="aButton" aria-label="A button - Select">A</button>
+                <button class="action-button b-button" id="bButton" aria-label="B button - Back">B</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
